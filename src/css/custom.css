@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-dark-color: rgb(9, 9, 63);
+  --ifm-code-font-size: 95%;
+  --bg-surface: #f8f9fa;
+  --text-primary: #0a0a0a;
+  --text-secondary: #6b7280;
+  --accent: #f7df1e;
+  --accent-dark: #d4be19;
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: rgb(234 179 8);
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --text-secondary: #9ca3af;
+  --accent: #f7df1e;
+  --accent-dark: #d4be19;
+  --bg-surface: #141414;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply backdrop-blur-md bg-opacity-80;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent;
+  }
+}
