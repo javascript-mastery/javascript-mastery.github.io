@@ -1,0 +1,62 @@
+.js-live-editor-body {
+  padding: 0 !important;
+  .editor-wrapper {
+    position: relative;
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+
+    .code-editor {
+      min-height: 200px;
+    }
+
+    .code-textarea {
+      outline: none;
+      padding-left: 50px !important; // Push typing area past line numbers
+      padding-top: 10px !important;
+    }
+
+    /* Fixing the overlapping bug */
+    .editor-line {
+      display: flex;
+      padding-left: 10px;
+
+      .line-number {
+        display: inline-block;
+        width: 30px;
+        text-align: right;
+        margin-right: 15px;
+        user-select: none;
+      }
+
+      .line-content {
+        white-space: pre;
+      }
+    }
+  }
+
+  .editor-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .output-container {
+    border-top: 1px solid var(--ifm-color-emphasis-300);
+
+    .output-header {
+      font-size: 10px;
+      font-weight: bold;
+      padding: 4px 16px;
+    }
+
+    .output-content {
+      margin: 0;
+      padding: 12px 16px;
+      font-family: monospace;
+      font-size: 14px;
+      min-height: 50px;
+      border: none;
+      border-radius: 0;
+    }
+  }
+}

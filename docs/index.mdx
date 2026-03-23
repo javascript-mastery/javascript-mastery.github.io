@@ -1,0 +1,85 @@
+---
+id: docs
+title: "JavaScript Mastery: The Complete Guide"
+sidebar_label: Introduction
+sidebar_position: 1
+slug: /
+description: "Master JavaScript from fundamentals to advanced architecture with interactive examples."
+tags: [javascript, tutorial, web-development]
+---
+
+import JSEditor from "@site/src/components/js-live-code-editor";
+import CodeBlock from "@theme/CodeBlock";
+import firstExample from "!!raw-loader!./_scripts/01-javascript-tutorial.js";
+
+> **"JavaScript is the language of the web. Master the language, master the web."**
+
+JavaScript has evolved from a simple scripting tool to a powerhouse capable of building full-scale enterprise applications, mobile apps, and server-side systems. This guide is designed to take you from **zero to architectural hero** through hands-on execution.
+
+## Why This Guide?
+
+Unlike traditional documentation, **JavaScript Mastery** focuses on deep understanding over rote memorization.
+
+:::tip What makes this different?
+- **Live Execution**: Don't just read code—run it and break it in our integrated editors.
+- **Modern Standards**: We focus on ES6+ and current industry best practices.
+- **Mental Models**: Learn how the engine works under the hood (Closures, Event Loop, Hoisting).
+:::
+
+## Your Learning Path
+
+We have structured this journey into four distinct phases:
+
+
+| Phase | Focus | Key Topics |
+| :--- | :--- | :--- |
+| **01. Foundations** | The Building Blocks | Variables, Data Types, Operators, Control Flow |
+| **02. Logic & Data** | Organizing Code | Functions, Arrays, Objects, Prototypes |
+| **03. The Browser** | Interaction | DOM, Events, Web APIs, Local Storage |
+| **04. Mastery** | Advanced Patterns | Async/Await, Promises, Closures, Modules |
+
+##  Start Your Engines
+
+Let's verify your environment. Below is a live interactive editor. You can modify the code and click **Run** to see the output instantly.
+
+<JSEditor title="01-foundations.js" run={true}>
+  {firstExample}
+</JSEditor>
+
+## Is This For You?
+
+This tutorial is built for **anyone** looking to professionalize their coding skills:
+*   **Aspiring Developers** looking for a solid career foundation.
+*   **Self-taught Coders** wanting to fill in the "knowledge gaps."
+*   **Engineers** switching from other languages like Python or C++.
+
+## Prerequisites
+
+You don't need to be a math genius, but you do need:
+1.  **A Modern Browser**: Chrome, Firefox, or Brave.
+2.  **A Curiosity Mindset**: Be prepared to experiment and fail fast.
+3.  **Basic HTML/CSS knowledge**: Helpful, but not strictly required.
+
+## Knowledge Check
+
+Let's test your setup. Try to declare your first variables in the "Solution" block below.
+
+### Exercise: The Identity Challenge
+1. Create a variable `name` and assign your name as a string.
+2. Create a variable `age` and assign a number.
+3. Log them to the console.
+
+<details>
+<summary>👉 View Solution</summary>
+
+```javascript title="solution.js"
+const name = "JavaScript Master";
+let age = 25;
+
+console.log(name); 
+console.log(age); 
+```
+
+</details>
+
+**Congratulations!** You've completed your first JavaScript exercise.🎉
