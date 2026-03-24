@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 // import clsx from 'clsx';
 // import Link from '@docusaurus/Link';
+import Head from "@docusaurus/Head";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import {Community } from '@site/src/components/Community';
@@ -40,6 +41,19 @@ export default function Home(): ReactNode {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
+        <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5832817025080991"
+          crossOrigin="anonymous"
+        />
+        <script
+          async
+          custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
+        />
+        <meta name="google-adsense-account" content="ca-pub-5832817025080991" />
+      </Head>
       {/* <HomepageHeader /> */}
       <main>
         <Hero />

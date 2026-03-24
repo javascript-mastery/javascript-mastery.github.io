@@ -68,6 +68,16 @@ const config: Config = {
     ],
   ],
 
+    stylesheets: [
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
+      integrity:
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
+    },
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
@@ -141,9 +151,21 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} JavaScript Mastery. All rights reserved.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+        additionalLanguages: [
+          "java",
+          "latex",
+          "haskell",
+          "matlab",
+          "PHp",
+          "powershell",
+          "bash",
+          "diff",
+          "json",
+          "scss",
+        ],
+      },
   } satisfies Preset.ThemeConfig,
 
   plugins: ["./src/plugins/tailwind-config.js"],
