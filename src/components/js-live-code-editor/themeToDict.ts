@@ -1,29 +1,47 @@
-import { Language, PrismTheme } from "prism-react-renderer";
+import { type Language, type PrismTheme } from "prism-react-renderer";
 
+/**
+ * Enhanced ThemeDict to support standard Prism token types 
+ * and custom object styles.
+ */
 type ThemeDict = {
-  root: object;
-  plain: object;
-  [type: string]: object;
+  root: React.CSSProperties;
+  plain: React.CSSProperties;
+  [type: string]: React.CSSProperties;
 };
 
+/**
+ * Converts a Prism theme object into a flat dictionary for faster lookup 
+ * during the render cycle of the JSEditor.
+ */
 const themeToDict = (theme: PrismTheme, language: Language): ThemeDict => {
-  const { plain } = theme;
-  const themeDict = theme.styles.reduce<ThemeDict>((acc, themeEntry) => {
-    const { languages, style } = themeEntry;
+  const { plain, styles } = theme;
 
+  // Initialize the accumulator with required base properties
+  const initialDict: ThemeDict = {
+    root: plain as React.CSSProperties,
+    plain: { ...plain, backgroundColor: "transparent" } as React.CSSProperties,
+  };
+
+  const themeDict = styles.reduce<ThemeDict>((acc, themeEntry) => {
+    const { languages, style, types } = themeEntry;
+
+    // If the style is language-specific and doesn't match, skip it
     if (languages && !languages.includes(language)) {
       return acc;
     }
 
-    themeEntry.types.forEach((type) => {
-      const accStyle = { ...acc[type], ...style };
-      acc[type] = accStyle;
+    types.forEach((type) => {
+      // Merge existing styles for this type with the new style entry
+      acc[type] = { 
+        ...(acc[type] || {}), 
+        ...(style as React.CSSProperties) 
+      };
     });
-    return acc;
-  }, {} as ThemeDict);
 
-  themeDict.root = plain;
-  themeDict.plain = { ...plain, backgroundColor: undefined };
+    return acc;
+  }, initialDict);
+
   return themeDict;
 };
 

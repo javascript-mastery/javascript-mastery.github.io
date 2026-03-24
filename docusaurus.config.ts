@@ -146,7 +146,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: ["./src/plugins/tailwind-config.js", "docusaurus-plugin-sass"],
+  plugins: ["./src/plugins/tailwind-config.js"],
 };
 
 export default config;
