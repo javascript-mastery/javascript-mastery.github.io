@@ -123,11 +123,13 @@ export default function JSEditor({ children = "", title = "index.js" }: Props) {
                 Prism.tokenize(code, Prism.languages.javascript),
               );
               return tokens.map((line, i) => (
-                <div key={i} className="flex leading-6">
+                <div key={i} className="flex">
+                  {/* 
                   <span className="inline-block text-right mr-1 select-none text-gray-500 font-mono text-[14px] pt-1">
                     {i + 1}.
                   </span>
-                  <span className="flex-1 mt-1">
+                 */}
+                  <span className="flex-1">
                     {line.map((token, key) => (
                       <span
                         key={key}
