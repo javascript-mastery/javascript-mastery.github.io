@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 // import {Community } from '@site/src/components/Community';
 import {Hero} from '@site/src/components/layout-1/Hero';
+// import { Playground } from '../components/layout-1/Playground';
 // import Heading from '@theme/Heading';
 
 // import styles from './index.module.css';
@@ -46,6 +47,7 @@ export default function Home(): ReactNode {
         {/* <FeaturesSection />
         <EcosystemMap />        
         <Community /> */}
+        {/* <Playground /> */}
       </main>
     </Layout>
   );

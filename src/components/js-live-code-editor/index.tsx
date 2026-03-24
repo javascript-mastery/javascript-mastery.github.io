@@ -66,50 +66,50 @@ export default function JSEditor({ children = "", title = "index.js" }: Props) {
       )}
     >
       {/* Header */}
-     <div
-  className={clsx(
-    styles.browserWindowHeader,
-    "flex items-center px-4 py-2 bg-[var(--ifm-color-emphasis-200)] gap-2"
-  )}
->
-  {/* 1. Left Section: Buttons (Fixed Width) */}
-  <div className={clsx(styles.buttons, "flex items-center shrink-0")}>
-    <span className={styles.dot} style={{ background: "#f25f58" }} />
-    <span className={styles.dot} style={{ background: "#fbbe3c" }} />
-    <span className={styles.dot} style={{ background: "#58cb42" }} />
-  </div>
+      <div
+        className={clsx(
+          styles.browserWindowHeader,
+          "flex items-center px-4 py-2 bg-[var(--ifm-color-emphasis-200)] gap-2",
+        )}
+      >
+        {/* 1. Left Section: Buttons (Fixed Width) */}
+        <div className={clsx(styles.buttons, "flex items-center shrink-0")}>
+          <span className={styles.dot} style={{ background: "#f25f58" }} />
+          <span className={styles.dot} style={{ background: "#fbbe3c" }} />
+          <span className={styles.dot} style={{ background: "#58cb42" }} />
+        </div>
 
-  {/* 2. Center Section: Address Bar (Flexible & Centered) */}
-  <div className="flex-1 flex justify-center px-4">
-    <div
-      className={clsx(
-        styles.browserWindowAddressBar,
-        "flex items-center gap-2 px-6 py-1 rounded-full bg-[var(--ifm-background-color)] border border-[var(--ifm-color-emphasis-300)] shadow-sm max-w-[400px] w-full justify-center transition-all duration-300"
-      )}
-    >
-      <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shrink-0"></span>
-      <span className="text-xs font-mono font-bold opacity-80 truncate tracking-wider">
-        {title}
-      </span>
-    </div>
-  </div>
+        {/* 2. Center Section: Address Bar (Flexible & Centered) */}
+        <div className="flex-1 flex justify-center px-4">
+          <div
+            className={clsx(
+              styles.browserWindowAddressBar,
+              "flex items-center gap-2 px-6 py-1 rounded-full bg-[var(--ifm-background-color)] border border-[var(--ifm-color-emphasis-300)] shadow-sm max-w-[400px] w-full justify-center transition-all duration-300",
+            )}
+          >
+            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shrink-0"></span>
+            <span className="text-xs font-mono font-bold opacity-80 truncate tracking-wider">
+              {title}
+            </span>
+          </div>
+        </div>
 
-  {/* 3. Right Section: Action Buttons (Fixed Width) */}
-  <div className="flex items-center shrink-0">
-    <button
-      type="button"
-      onClick={handleCopy}
-      className="p-2 rounded-lg hover:bg-[var(--ifm-color-emphasis-300)] transition-all text-[var(--ifm-color-content)] clean-btn border border-transparent hover:border-[var(--ifm-color-emphasis-400)] active:scale-90"
-      title="Copy Code"
-    >
-      {copied ? (
-        <Check size={16} className="text-green-500" />
-      ) : (
-        <Copy size={16} className="opacity-70" />
-      )}
-    </button>
-  </div>
-</div>
+        {/* 3. Right Section: Action Buttons (Fixed Width) */}
+        <div className="flex items-center shrink-0">
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="p-2 rounded-lg hover:bg-[var(--ifm-color-emphasis-300)] transition-all text-[var(--ifm-color-content)] clean-btn border border-transparent hover:border-[var(--ifm-color-emphasis-400)] active:scale-90"
+            title="Copy Code"
+          >
+            {copied ? (
+              <Check size={16} className="text-green-500" />
+            ) : (
+              <Copy size={16} className="opacity-70" />
+            )}
+          </button>
+        </div>
+      </div>
 
       {/* Main Body */}
       <div className="flex flex-col bg-[var(--ifm-background-surface-color)]">

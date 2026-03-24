@@ -5,7 +5,9 @@ description: "A deep dive into JavaScript variable scopes (Global, Function, Blo
 keywords: [javascript variables, hoisting, var let const differences, functional scope, block scope, js execution context]
 ---
 
+<!--
 import JSEditor from "@site/src/components/js-live-code-editor";
+-->
 import firstExample from "!!raw-loader!./_scripts/03-variable-declaration-01.js";
 import secondExample from "!!raw-loader!./_scripts/03-variable-declaration-02.js";
 import thirdExample from "!!raw-loader!./_scripts/03-variable-declaration-03.js";
@@ -23,17 +25,21 @@ Before ES6, `var` was the only way to declare variables. It behaves differently 
 * **Global Scope:** When declared outside a function, it attaches to the `window` object (in browsers).
 * **Function Scope:** When declared inside a `function`, it is trapped there and cannot be accessed from outside.
 
+<!--
 <JSEditor title="Visualizing Function Scope" url="scopes">
   {firstExample}
 </JSEditor>
+-->
 
 ### Re-declaration & Updates
 
 One of the "quirks" of `var` is that it allows you to re-declare the same variable name without an error. In large codebases, this often leads to accidental bugs.
 
+<!--
 <JSEditor title="The 'Silent' Re-declaration">
   {secondExample}
 </JSEditor>
+-->
 
 :::tip Technical Insight
 A repeated `var` declaration in the same scope is effectively a **do-nothing operation**. The JS engine sees the first one and ignores subsequent declarations of the same name.
@@ -63,9 +69,11 @@ age = 25;         // 3. Assignment happens here
 
 Functions are the "VIPs" of hoisting. They are moved to the top **before** variable declarations.
 
+<!--
 <JSEditor title="Challenge: Function vs. Var Hoisting">
 {fourthExample}
 </JSEditor>
+-->
 
 ## 3. The Modern Way: `let` & `const`
 
@@ -82,9 +90,11 @@ While `var` is function-scoped, `let` and `const` are **block-scoped** `{ }`. Th
 
 Test your understanding of the execution context with these common interview scenarios.
 
+<!--
 <JSEditor title="Puzzle: The Hoisting Order">
 {fifthExample}
 </JSEditor>
+-->
 
 :::info Deep Dive
 For a deeper understanding of these mechanics, I highly recommend checking out:

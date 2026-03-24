@@ -5,7 +5,10 @@ description: "Learn how variable shadowing works in JavaScript, the difference b
 keywords: [javascript shadowing, lexical scope, illegal shadowing, var vs let, javascript tutorial]
 ---
 
+<!--
 import JSEditor from "@site/src/components/js-live-code-editor";
+-->
+
 import firstExample from "!!raw-loader!./_scripts/02-shadow-01.js";
 import secondExample from "!!raw-loader!./_scripts/02-shadow-02.js";
 import thirdExample from "!!raw-loader!./_scripts/02-shadow-03.js";
@@ -18,9 +21,11 @@ When this happens, the inner variable "shadows" the outer one, making the outer 
 
 In the example below, notice how the `city` inside the function is independent of the `city` defined at the top level.
 
+<!--
 <JSEditor title="Example: Lexical Shadowing" run={false}>
   {firstExample}
 </JSEditor>
+-->
 
 > **What's happening?** > The `city` parameter on **Line 3** shadows the `city` variable on **Line 1**. Any changes made to `city` inside the function (Line 4) stay inside the function's "bubble."
 
@@ -32,9 +37,11 @@ While shadowing is a common pattern, JavaScript has strict rules about how diffe
 
 You cannot shadow a `let` or `const` variable using `var` within the same block or a nested block. This is because `var` is function-scoped and tries to "hoist" itself to the top, which conflicts with the block-scoped `let`.
 
+<!--
 <JSEditor title="Error: Illegal Shadowing Attempt">
   {secondExample}
 </JSEditor>
+-->
 
 *The `var` at line 4 is trying to **'cross the boundary'** of the `let` declaration, which results in a SyntaxError.*
 
@@ -42,9 +49,11 @@ You cannot shadow a `let` or `const` variable using `var` within the same block 
 
 Shadowing becomes valid again if there is a **function boundary** separating the declarations. Since functions create a completely new execution context, the conflict is resolved.
 
+<!--
 <JSEditor title="Valid: Shadowing via Function Boundary">
   {thirdExample}
 </JSEditor>
+-->
 
 ## Best Practices
 
