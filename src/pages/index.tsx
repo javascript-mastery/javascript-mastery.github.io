@@ -3,16 +3,15 @@ import type {ReactNode} from 'react';
 // import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-// import {Community } from '@site/src/components/Community';
+import {Community } from '@site/src/components/Community';
 import {Hero} from '@site/src/components/layout-1/Hero';
-// import { Playground } from '../components/layout-1/Playground';
 // import Heading from '@theme/Heading';
 
 // import styles from './index.module.css';
 // import { HeroSection } from '../components/sections/HeroSection';
-// import { FeaturesSection } from '../components/sections/FeaturesSection';
+import { FeaturesSection } from '../components/sections/FeaturesSection';
 // import { StatsSection } from '../components/sections/StatsSection';
-// import { EcosystemMap } from '../components/sections/EcosystemMap';
+import { EcosystemMap } from '../components/sections/EcosystemMap';
 
 // function HomepageHeader() {
 //   const {siteConfig} = useDocusaurusContext();
@@ -44,10 +43,9 @@ export default function Home(): ReactNode {
       {/* <HomepageHeader /> */}
       <main>
         <Hero />
-        {/* <FeaturesSection />
+        <FeaturesSection />
         <EcosystemMap />        
-        <Community /> */}
-        {/* <Playground /> */}
+        <Community />
       </main>
     </Layout>
   );
