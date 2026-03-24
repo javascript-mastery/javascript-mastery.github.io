@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, GitFork, Star, Sparkles, Zap, Trophy } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { cn } from '../lib/utils';
+import { Users, GitFork, Star, Sparkles, Zap, Trophy } from 'lucide-react';
+import Link from '@docusaurus/Link';
 import { PathLevel } from '../types';
 
 const pathfinderCards: Array<{
@@ -40,8 +39,6 @@ const githubStats = [
   { label: 'Forks', value: '3.8K', icon: GitFork },
 ];
 
-
-
 export function Community() {
   return (
     <div className="relative">
@@ -57,7 +54,7 @@ export function Community() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Join Our <span className="text-[var(--ifm-color-primary)]">Community</span>
             </h2>
-            <p className="text-[var(--text-secondary)] text-lg">
+            <p className="text-lg">
               Trusted by thousands of developers worldwide
             </p>
           </motion.div>
@@ -76,7 +73,7 @@ export function Community() {
                 >
                   <Icon className="w-12 h-12 text-[var(--ifm-color-primary)] mx-auto mb-4" />
                   <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-[var(--text-secondary)]">{stat.label}</div>
+                  <div className="">{stat.label}</div>
                 </motion.div>
               );
             })}
@@ -95,7 +92,7 @@ export function Community() {
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Open Source & Free Forever
               </h3>
-              <p className="text-[var(--text-secondary)] text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-lg mb-8 max-w-2xl mx-auto">
                 Built by the community, for the community. Contribute, learn, and grow
                 together with developers from around the world.
               </p>
@@ -109,8 +106,8 @@ export function Community() {
                   Contribute on GitHub
                 </a>
                 <Link
-                  to="/projects"
-                  className="px-8 py-4 bg-white/5 border border-white/10 rounded-lg font-semibold hover:bg-white/10 transition-all"
+                  to="#"
+                  className="px-8 py-4 border border-white rounded-lg font-semibold hover:bg-white/10 transition-all"
                 >
                   Browse Projects
                 </Link>

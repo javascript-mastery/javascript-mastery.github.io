@@ -13,7 +13,6 @@ const floatingCodeSnippets = [
 export function Hero() {
   return (
     <section
-      id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-gray-100 dark:from-slate-950 dark:to-slate-900"
     >
       <div className="absolute inset-0 overflow-hidden">

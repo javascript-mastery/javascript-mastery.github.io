@@ -3,7 +3,7 @@ import type {ReactNode} from 'react';
 // import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import {Community } from '@site/src/components/Home';
+import {Community } from '@site/src/components/Community';
 import {Hero} from '@site/src/components/layout-1/Hero';
 // import Heading from '@theme/Heading';
 
