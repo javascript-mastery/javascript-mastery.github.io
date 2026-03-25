@@ -5,7 +5,7 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import {Community } from '@site/src/components/Community';
-import {Hero} from '@site/src/components/layout-1/Hero';
+// import {Hero} from '@site/src/components/layout-1/Hero';
 // import Heading from '@theme/Heading';
 
 // import styles from './index.module.css';
@@ -13,6 +13,10 @@ import {Hero} from '@site/src/components/layout-1/Hero';
 import { FeaturesSection } from '../components/sections/FeaturesSection';
 // import { StatsSection } from '../components/sections/StatsSection';
 import { EcosystemMap } from '../components/sections/EcosystemMap';
+import { HeroSection } from '../components/sections/HeroSection';
+import { LogoMarquee } from '../components/LogoMarquee';
+import { LiveSnippetPreview } from '../components/LiveSnippetPreview';
+// import { FinalCTA } from '../components/FinalCTA';
 
 // function HomepageHeader() {
 //   const {siteConfig} = useDocusaurusContext();
@@ -56,10 +60,14 @@ export default function Home(): ReactNode {
       </Head>
       {/* <HomepageHeader /> */}
       <main>
-        <Hero />
+        <HeroSection />
+        {/* <Hero /> */}
+        <LogoMarquee />
         <FeaturesSection />
+        <LiveSnippetPreview />
         <EcosystemMap />        
         <Community />
+        {/* <FinalCTA /> */}
       </main>
     </Layout>
   );

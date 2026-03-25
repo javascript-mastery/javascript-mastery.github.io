@@ -37,3 +37,10 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+// How to use
+
+// <Button>Click Me</Button>
+// <Button variant="secondary">Cancel</Button>
+// <Button variant="outline">Learn More</Button>
+// <Button variant="ghost">Dismiss</Button>
