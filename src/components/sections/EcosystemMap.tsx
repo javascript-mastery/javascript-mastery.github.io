@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Card } from "../ui/Card";
 import { Section } from "../ui/Section";
+import { motion } from "framer-motion";
 
 export const EcosystemMap: React.FC = () => {
   const ecosystemCategories = [
@@ -77,49 +78,65 @@ export const EcosystemMap: React.FC = () => {
 
   return (
     <Section background="dots">
-      <div className="text-center mb-12">
+      {/* <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           JavaScript Ecosystem
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Explore the vast landscape of JavaScript technologies and tools
         </p>
-      </div>
+      </div> */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-  {ecosystemCategories.map((category) => (
-    <Card 
-      key={category.title} 
-      hover 
-      glass 
-      className="p-5 border border-slate-200  transition-all duration-300"
-    >
-      {/* Header: Icon and Title aligned horizontally */}
-      <div className="flex items-center gap-4 mb-4">
-        <div className={`shrink-0 inline-flex rounded-xl p-2.5 bg-gradient-to-br shadow-sm ${colorClasses[category.color as keyof typeof colorClasses]}`}>
-          <category.icon className="w-4 h-4 text-white" />
-        </div>
-        <h3 className="text-lg mt-4 font-bold text-gray-900 dark:text-white leading-tight">
-          {category.title}
-        </h3>
-      </div>
-
-      {/* Content: List with better spacing and subtle bullets */}
-      <ul className="grid grid-cols-1 gap-2.5">
-        {category.items.map((item) => (
-          <li
-            key={item}
-            className="flex items-center text-sm font-medium text-slate-600 dark:text-zinc-400 group/item"
+      <header className="text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-black mb-6 text-balance"
           >
-            {/* The bullet now highlights on hover of the card */}
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-zinc-700 mr-3 transition-colors group-hover:bg-blue-500" />
-            {item}
-          </li>
+            Explore the <span className="text-[var(--ifm-color-primary)]">JS Ecosystem</span>
+          </motion.h2>
+          <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+            A visual directory of the technologies that power the modern web, 
+            built for the open-source community.
+          </p>
+        </header>
+
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ecosystemCategories.map((category) => (
+          <Card
+            key={category.title}
+            hover
+            glass
+            className="p-5 border border-slate-200  transition-all duration-300"
+          >
+            {/* Header: Icon and Title aligned horizontally */}
+            <div className="flex items-center gap-4 mb-4">
+              <div
+                className={`shrink-0 inline-flex rounded-xl p-2.5 bg-gradient-to-br shadow-sm ${colorClasses[category.color as keyof typeof colorClasses]}`}
+              >
+                <category.icon className="w-4 h-4 text-white" />
+              </div>
+              <h3 className="text-lg mt-4 font-bold text-gray-900 dark:text-white leading-tight">
+                {category.title}
+              </h3>
+            </div>
+
+            {/* Content: List with better spacing and subtle bullets */}
+            <ul className="grid grid-cols-1 gap-2.5">
+              {category.items.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center text-sm font-medium text-slate-600 dark:text-zinc-400 group/item"
+                >
+                  {/* The bullet now highlights on hover of the card */}
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-zinc-700 mr-3 transition-colors group-hover:bg-blue-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Card>
         ))}
-      </ul>
-    </Card>
-  ))}
-</div>
+      </div>
     </Section>
   );
 };

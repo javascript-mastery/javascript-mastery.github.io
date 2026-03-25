@@ -27,3 +27,11 @@ export const Badge: React.FC<BadgeProps> = ({
     </span>
   );
 };
+
+
+// Using Different Variants
+
+{/* <Badge variant="success">Completed</Badge>
+<Badge variant="error">Failed</Badge>
+<Badge variant="warning">Pending</Badge>
+<Badge variant="info">In Progress</Badge> */}
