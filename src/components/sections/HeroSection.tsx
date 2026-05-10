@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Code2, Sparkles, Terminal, ChevronRight } from 'lucide-react';
+import Link from '@docusaurus/Link';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
@@ -44,11 +45,16 @@ export const HeroSection: React.FC = () => {
             {/* Primary Actions */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-[var(--ifm-color-primary)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] text-white px-8 h-14 rounded-xl group">
-                Start Learning Free
+                <Link href="/docs/" className="flex items-center">
+                  Get Started
+                </Link>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="lg" className="border-2 border-slate-200 dark:border-slate-800 h-14 px-8 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">
-                View Roadmap
+                <Link href="#" className="flex items-center">
+                  View Roadmap
+                </Link>
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
 

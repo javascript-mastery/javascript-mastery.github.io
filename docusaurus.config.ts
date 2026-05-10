@@ -1,6 +1,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+const remarkMath = require("remark-math");
+const rehypeKatex = require("rehype-katex");
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -68,7 +70,7 @@ const config: Config = {
     ],
   ],
 
-    stylesheets: [
+  stylesheets: [
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
       type: "text/css",
@@ -91,12 +93,13 @@ const config: Config = {
         src: "img/js.svg",
       },
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
+        // {
+        //   type: "docSidebar",
+        //   sidebarId: "tutorialSidebar",
+        //   position: "left",
+        //   label: "Tutorial",
+        // },
+        { to: "/tutorial", label: "Tutorial", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "#",
@@ -151,24 +154,50 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} JavaScript Mastery. All rights reserved.`,
     },
     prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-        additionalLanguages: [
-          "java",
-          "latex",
-          "haskell",
-          "matlab",
-          "PHp",
-          "powershell",
-          "bash",
-          "diff",
-          "json",
-          "scss",
-        ],
-      },
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+      additionalLanguages: [
+        "java",
+        "latex",
+        "haskell",
+        "matlab",
+        "PHp",
+        "powershell",
+        "bash",
+        "diff",
+        "json",
+        "scss",
+      ],
+    },
   } satisfies Preset.ThemeConfig,
 
-  plugins: ["./src/plugins/tailwind-config.js"],
+  markdown: {
+    mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
+  themes: ["@docusaurus/theme-mermaid"],
+
+  plugins: [
+    "./src/plugins/tailwind-config.js",
+    [
+      "@docusaurus/plugin-content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      {
+        id: "tutorial",
+        path: "tutorial",
+        routeBasePath: "tutorial",
+        // breadcrumbs: true,
+        // editUrl: "#",
+        sidebarPath: require.resolve("./sidebars.ts"),
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+  ],
 };
 
 export default config;
