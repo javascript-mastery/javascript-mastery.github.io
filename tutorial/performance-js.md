@@ -7,6 +7,9 @@ tags: [ JavaScript, Performance, JavaScript Performance, JavaScript Performance 
 description: "In this tutorial, we will learn about performance optimization in JavaScript. We will discuss various techniques and best practices to improve the performance of your JavaScript code and make it run faster."
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 JavaScript is a powerful and flexible language, but it can also be slow if not optimized properly. In this tutorial, we will learn about performance optimization in JavaScript. By following these techniques and best practices, you can improve the performance of your JavaScript code and make it run faster.
 
 ## Performance Optimization Techniques

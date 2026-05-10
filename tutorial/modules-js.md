@@ -3,69 +3,12 @@ id: modules-in-js
 title: Modules in JavaScript
 sidebar_label: Modules
 sidebar_position: 37
-tags:
-  [
-    JavaScript,
-    Modules,
-    ES6,
-    ES2015,
-    ES6 Features,
-    ES2015 Features,
-    ES6 Tutorials,
-    ES2015 Tutorials,
-    ES6 Tutorial,
-    ES2015 Tutorial,
-    ES6 Modules,
-    ES2015 Modules,
-    Modules in JavaScript,
-    Modules in ES6,
-    Modules in ES2015,
-    JavaScript Modules,
-    ES6 Modules Tutorial,
-    ES2015 Modules Tutorial,
-    Modules Tutorial,
-    Modules in JavaScript Tutorial,
-    Modules in ES6 Tutorial,
-    Modules in ES2015 Tutorial,
-    JavaScript Modules Tutorial,
-    ES6 Modules Example,
-    ES2015 Modules Example,
-    Modules Example,
-    Modules in JavaScript Example,
-    Modules in ES6 Example,
-    Modules in ES2015 Example,
-    JavaScript Modules Example,
-    ES6 Modules Syntax,
-    ES2015 Modules Syntax,
-    Modules Syntax,
-    Modules in JavaScript Syntax,
-    Modules in ES6 Syntax,
-    Modules in ES2015 Syntax,
-    JavaScript Modules Syntax,
-    ES6 Modules Syntax Example,
-    ES2015 Modules Syntax Example,
-    Modules Syntax Example,
-    Modules in JavaScript Syntax Example,
-    Modules in ES6 Syntax Example,
-    Modules in ES2015 Syntax Example,
-    JavaScript Modules Syntax Example,
-    ES6 Modules Syntax Tutorial,
-    ES2015 Modules Syntax Tutorial,
-    Modules Syntax Tutorial,
-    Modules in JavaScript Syntax Tutorial,
-    Modules in ES6 Syntax Tutorial,
-    Modules in ES2015 Syntax Tutorial,
-    JavaScript Modules Syntax Tutorial,
-    ES6 Modules Syntax Example Tutorial,
-    ES2015 Modules Syntax Example Tutorial,
-    Modules Syntax Example Tutorial,
-    Modules in JavaScript Syntax Example Tutorial,
-    Modules in ES6 Syntax Example Tutorial,
-    Modules in ES2015 Syntax Example Tutorial,
-    JavaScript Modules Syntax Example Tutorial,
-  ]
+tags: [ JavaScript, Modules, Modules in JavaScript, JavaScript Modules, JavaScript Modules Tutorial, JavaScript Modules Example, JavaScript Modules ES6, JavaScript Modules Import Export, JavaScript Modules Default Export, JavaScript Modules Multiple Exports, JavaScript Modules Re-exporting ]
 description: "In this tutorial, you will learn about modules in JavaScript, a new feature introduced in ES6 (ES2015) that allows you to organize your code into reusable pieces."
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 In JavaScript, modules are a new feature introduced in <mark>ES6 (ES2015)</mark> that allows you to organize your code into reusable pieces. Modules are a way to split your code into separate files and import/export the parts you need.
 

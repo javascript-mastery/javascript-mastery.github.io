@@ -7,6 +7,9 @@ tags: [ JavaScript, Mistakes, Common Mistakes in JavaScript, JavaScript Mistakes
 description: "In this tutorial, we will learn about the common mistakes in JavaScript that developers make and how to avoid them. We will learn about the common pitfalls, bugs, and errors in JavaScript code and how to fix them."
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 JavaScript is a powerful and flexible language, but it is also easy to make mistakes while writing code. In this tutorial, we will learn about the common mistakes in JavaScript that developers make and how to avoid them. By understanding these mistakes and pitfalls, you can write better and more reliable JavaScript code.
 
 ## Common Mistakes in JavaScript

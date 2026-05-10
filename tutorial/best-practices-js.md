@@ -8,6 +8,9 @@ tags:
 description: "In this tutorial, we will learn about the best practices in JavaScript. We will learn about the coding standards, recommendations, conventions, rules, linting, ESLint, Prettier."
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Best Practices in JavaScript are a set of coding standards, recommendations, conventions, and rules that developers should follow while writing JavaScript code. They help in maintaining the code quality, readability, and consistency across the codebase. They also help in avoiding common pitfalls and bugs in the code.
 
 There are various tools available for enforcing the best practices in JavaScript such as ESLint, Prettier, etc. These tools help in automatically checking the code against the best practices and providing suggestions or warnings to fix the issues.
