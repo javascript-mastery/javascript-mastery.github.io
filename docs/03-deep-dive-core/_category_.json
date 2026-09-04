@@ -1,0 +1,10 @@
+{
+  "label": "Deep Dive Core",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Deep Dive into Core JavaScript Mechanics",
+    "description": "Master advanced JavaScript runtime internals including lexical environments, closures, prototype inheritance chains, execution contexts, call stacks, and dynamic 'this' binding.",
+    "slug": "/category/deep-dive-core"
+  }
+}

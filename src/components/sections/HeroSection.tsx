@@ -44,8 +44,8 @@ export const HeroSection: React.FC = () => {
 
             {/* Primary Actions */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[var(--ifm-color-primary)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] text-white px-8 h-14 rounded-xl group">
-                <Link href="/docs/" className="flex items-center">
+              <Button size="lg" className="bg-[var(--ifm-color-primary)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] px-8 h-14 rounded-xl group">
+                <Link href="/docs/" className="flex items-center text-black">
                   Get Started
                 </Link>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -7,27 +7,15 @@ const rehypeKatex = require("rehype-katex");
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "JS Mastery",
-  tagline: "JavaScript Mastery Learning",
+  title: "JavaScript Mastery",
+  tagline: "Master Modern JavaScript & Open Source Software Engineering",
   favicon: "img/js.svg",
-
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  // future: {
-  //   v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  // },
-
-  // Set the production url of your site here
-  url: "https://javascript-mastery.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "javascript-mastery", // Usually your GitHub org/user name.
-  projectName: "JavaScript Mastery", // Usually your repo name.
-
-  onBrokenLinks: "throw",
+  url: 'https://javascript-mastery.github.io',
+  baseUrl: '/',
+  organizationName: 'javascript-mastery',
+  projectName: 'javascript-mastery.github.io',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -46,7 +34,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "#",
         },
         blog: {
           showReadingTime: true,
@@ -57,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "#",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -87,67 +75,47 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "JS Mastery",
-      logo: {
-        alt: "JS Mastery Logo",
-        src: "img/js.svg",
-      },
+      title: 'JS Mastery',
+      logo: { alt: 'JS Mastery Logo', src: 'img/js.svg' },
       items: [
-        // {
-        //   type: "docSidebar",
-        //   sidebarId: "tutorialSidebar",
-        //   position: "left",
-        //   label: "Tutorial",
-        // },
+        { to: '/docs', label: 'Docs', position: 'left' },
         { to: "/tutorial", label: "Tutorial", position: "left" },
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/faq', label: 'FAQ', position: 'left' },
+        { to: '/about', label: 'About', position: 'left' },
+        { to: '/contact', label: 'Contact', position: 'left' },
         {
-          href: "#",
-          label: "GitHub",
-          position: "right",
+          href: 'https://github.com/javascript-mastery',
+          label: 'GitHub',
+          position: 'right',
         },
       ],
-    },
+    },    
     footer: {
-      style: "dark",
+      style: 'dark',
       links: [
         {
-          title: "Docs",
+          title: 'Curriculum',
           items: [
-            {
-              label: "Tutorial",
-              to: "/docs/",
-            },
+            { label: 'JavaScript', to: '/docs' },
+            { label: 'Tutorial', to: '/tutorial' },
+            { label: 'Blog Articles', to: '/blog' },
           ],
         },
         {
-          title: "Community",
+          title: 'Company & Compliance',
           items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
+            { label: 'About Us', to: '/about' },
+            { label: 'Contact Us', to: '/contact' },
+            { label: 'FAQ', to: '/faq' },
+            { label: 'Privacy Policy', to: '/privacy-policy' },
+            { label: 'Terms of Service', to: '/terms' },
           ],
         },
         {
-          title: "More",
+          title: 'Community',
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
+            { label: 'GitHub', href: 'https://github.com/javascript-mastery' },
           ],
         },
       ],

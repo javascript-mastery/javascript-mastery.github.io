@@ -1,0 +1,10 @@
+{
+  "label": "JavaScript Fundamentals",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "JavaScript Fundamentals",
+    "description": "Master core language constructs including variable scoping, primitive and complex data types, type coercion, function declarations, and control flow mechanics.",
+    "slug": "/category/javascript-fundamentals"
+  }
+}

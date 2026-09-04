@@ -1,0 +1,10 @@
+{
+  "label": "Asynchronous JavaScript",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Asynchronous JavaScript & Engine Concurrency",
+    "description": "Master non-blocking asynchronous execution in JavaScript, including the Event Loop, Microtask vs. Macrotask queues, Promises, Async/Await architecture, and the Fetch API.",
+    "slug": "/category/asynchronous-javascript"
+  }
+}

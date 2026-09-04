@@ -1,0 +1,10 @@
+{
+  "label": "Design Patterns & Best Practices",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "title": "Design Patterns & Production Best Practices",
+    "description": "Master essential software design patterns in JavaScript, clean coding principles, performance optimization techniques, memory management, and enterprise architecture guidelines.",
+    "slug": "/category/design-patterns-and-best-practices"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "DOM & Browser APIs",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "DOM Manipulation & Web Browser APIs",
+    "description": "Master DOM traversal, high-performance element manipulation, event handling and delegation, storage mechanics, and modern browser Web APIs.",
+    "slug": "/category/dom-and-browser-apis"
+  }
+}
