@@ -22,7 +22,15 @@ module.exports = {
         sm: "0px",
         lg: "997px",
       },
-      colors: {},
+      colors: {
+        brand: {
+          50: '#fefce8',
+          100: '#fef9c3',
+          500: '#eab308',
+          600: '#ca8a04',
+          900: '#713f12',
+        },
+      },
     },
   },
   plugins: [],
