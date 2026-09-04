@@ -53,7 +53,7 @@ Variables declared outside any function or block belong to the global scope.
 
 :::note
 
-When you run the above code, the output is undefined because the variable `globalAppTitle` is declared in the global scope and is accessible inside the function `printTitle()`.
+In the example above, `globalAppTitle` is declared in the global scope, making it accessible from anywhere in the script, including inside functions like `printTitle()`.
 
 So, when we call `printTitle()`, it logs the value of `globalAppTitle` to the console.
 
@@ -107,9 +107,9 @@ Try editing the script below to observe how block scope and variable re-assignme
 
 ## Best Practices
 
-1. **Default to `const**`: Protect variables from unintended re-assignments.
+1. **Default to `const`**: Protect variables from unintended re-assignments.
 2. **Use `let` for reassignment**: Use only when values must mutate (e.g., loop counters, accumulators).
-3. **Avoid `var**`: Prevent scope-leakage issues and silent hoisting bugs in modern applications.
+3. **Avoid `var`**: Prevent scope-leakage issues and silent hoisting bugs in modern applications.
 
 ## Knowledge Check
 
