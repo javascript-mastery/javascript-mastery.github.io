@@ -96,12 +96,6 @@ Ready to dive deeper? Proceed to the next page to configure your local developme
 
 ```
 docs/
-├── 03-deep-dive-core/
-│   ├── _category_.json
-│   ├── closures-and-lexical-scope.md
-│   ├── prototype-and-inheritance.md
-│   ├── execution-context-and-callstack.md
-│   └── this-keyword-explained.md
 ├── 04-asynchronous-javascript/
 │   ├── _category_.json
 │   ├── event-loop-and-task-queue.md
