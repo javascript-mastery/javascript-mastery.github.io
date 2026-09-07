@@ -145,7 +145,7 @@ const config: Config = {
       onBrokenMarkdownLinks: "warn",
     },
   },
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
 
   plugins: [
     "./src/plugins/tailwind-config.js",

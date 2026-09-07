@@ -96,7 +96,6 @@ Predict the log sequence of synchronous statements, `setTimeout`, and `Promise.t
 2. **Offload Heavy Loops with `setTimeout`**: Yield execution back to the browser frame engine by breaking intensive computations into macrotask chunks (`setTimeout(fn, 0)`).
 3. **Avoid Infinite Microtask Chaining**: Never recursively queue microtasks (`queueMicrotask` or `.then`) without exit conditions; doing so blocks DOM rendering and input events.
 
-
 ## Knowledge Check
 
 ### Exercise Requirements:

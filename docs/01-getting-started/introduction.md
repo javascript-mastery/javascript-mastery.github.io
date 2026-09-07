@@ -96,21 +96,6 @@ Ready to dive deeper? Proceed to the next page to configure your local developme
 
 ```
 docs/
-├── 04-asynchronous-javascript/
-│   ├── _category_.json
-│   ├── event-loop-and-task-queue.md
-│   ├── promises-and-async-await.md
-│   └── fetch-api-and-ajax.md
-├── 05-dom-and-browser-apis/
-│   ├── _category_.json
-│   ├── dom-manipulation.md
-│   ├── event-handling-and-delegation.md
-│   └── web-storage-and-cookies.md
-├── 06-modern-es6-plus/
-│   ├── _category_.json
-│   ├── destructuring-and-rest-spread.md
-│   ├── modules-import-export.md
-│   └── iterators-and-generators.md
 └── 07-design-patterns-and-best-practices/
     ├── _category_.json
     ├── design-patterns.md
