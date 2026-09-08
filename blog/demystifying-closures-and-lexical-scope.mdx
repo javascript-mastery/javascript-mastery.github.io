@@ -1,0 +1,151 @@
+---
+slug: demystifying-closures-and-lexical-scope
+title: "Demystifying Closures and Lexical Scope in JavaScript"
+authors: [ajay-dhangar]
+tags: [javascript, es6, web-development, intermediate, closures]
+description: "Master closures and lexical scope in JavaScript. Learn how functions retain access to their outer variables, handle state encapsulation, and avoid memory leak pitfalls."
+image: /img/blogs/closures-lexical-scope.png
+date: 2026-09-08
+---
+
+import JSEditor from "@site/src/components/js-live-code-editor";
+import CodeBlock from "@theme/CodeBlock";
+import firstExample from "!!raw-loader!./_scripts/closures-state-retention.js";
+
+Closures are often regarded as one of JavaScript's most intimidating concepts, yet you likely use them every day without realizing it. Understanding closures unlocks powerful architectural patterns like data privacy, function currying, and custom event handlers.
+
+![Closures and Lexical Scope in JavaScript](/img/blogs/closures-lexical-scope.png)
+
+In this guide, we will break down **Lexical Scope**, how **Closures** preserve variable references across execution contexts, and real-world practical use cases.
+
+<!-- truncate -->
+
+## What is Lexical Scope?
+
+JavaScript uses **Lexical Scoping** (also known as Static Scoping). This means that variable access is determined strictly by the physical location of code at compile/write time—not where functions are called at runtime.
+
+Nested inner functions always have access to variables declared in their outer parent scopes.
+
+```javascript
+const globalName = "JavaScript Mastery";
+
+function outerFunction() {
+  const outerVar = "I am outside!";
+
+  function innerFunction() {
+    // Has access to globalName, outerVar, and its own scope
+    console.log(`${globalName}: ${outerVar}`);
+  }
+
+  innerFunction();
+}
+
+outerFunction(); // Logs: "JavaScript Mastery: I am outside!"
+
+```
+
+## What is a Closure?
+
+A **Closure** is created when an inner function is returned or passed out of its parent scope, allowing it to "remember" and access variables from its outer lexical scope even **after the outer function has finished executing**.
+
+```javascript
+function createCounter() {
+  let count = 0; // Private variable trapped inside closure
+
+  return function increment() {
+    count++;
+    return count;
+  };
+}
+
+const counter = createCounter();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+```
+
+When `createCounter()` finishes running, its execution stack frame is popped off, but `count` remains stored in memory because `increment` retains a reference link to its outer lexical environment.
+
+## Practical Real-World Use Cases
+
+### 1. Data Privacy & Encapsulation (Private Variables)
+
+JavaScript classes natively support private fields (`#field`), but closures have historically provided robust encapsulation:
+
+```javascript
+function createBankAccount(initialBalance) {
+  let balance = initialBalance; // Cannot be accessed directly from outside
+
+  return {
+    deposit(amount) {
+      if (amount > 0) balance += amount;
+      return balance;
+    },
+    withdraw(amount) {
+      if (amount <= balance) balance -= amount;
+      return balance;
+    },
+    getBalance() {
+      return balance;
+    }
+  };
+}
+
+const account = createBankAccount(1000);
+account.deposit(500);
+console.log(account.getBalance()); // 1500
+console.log(account.balance); // undefined (Private state protected!)
+
+```
+
+### 2. Function Currying & Partial Application
+
+Closures allow functions to accept arguments incrementally over multiple invocations:
+
+```javascript
+const multiply = (a) => (b) => a * b;
+
+const double = multiply(2);
+const triple = multiply(3);
+
+console.log(double(5)); // 10
+console.log(triple(5)); // 15
+
+```
+
+## Common Pitfalls: Memory Leaks
+
+Because closures retain references to outer scope variables, unreferenced large objects trapped inside closure scopes can lead to memory leaks if retained indefinitely.
+
+```javascript
+// ❌ Potential Leak Pattern
+function processData() {
+  const hugeArray = new Array(1000000).fill("Data");
+
+  return function logInfo() {
+    // Only needs length, but holds reference to full array context
+    console.log("Array ready");
+  };
+}
+
+```
+
+:::tip Mitigation Strategy
+Extract only the primitive values or small fields required by the inner function rather than trapping large objects inside the outer function scope.
+:::
+
+## Interactive Playground
+
+Experiment with private closures and state retention live:
+
+<JSEditor title="closures-state-retention.js" run={true}>
+  {firstExample}
+</JSEditor>
+
+## Summary
+
+* **Lexical Scope** determines variable availability based on where code is written in the file.
+* **Closures** pair a function with its surrounding lexical environment, allowing state retention across execution boundaries.
+* **Key Applications** include module patterns, event handlers, function currying, and private variable encapsulation.
