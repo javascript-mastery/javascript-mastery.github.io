@@ -92,12 +92,3 @@ console.log(`Hello, I am ${developerName} with Level ${experienceLevel} expertis
 :::success Next Steps
 Ready to dive deeper? Proceed to the next page to configure your local development environment and developer tools!
 :::
-
-
-```
-docs/
-└── 07-design-patterns-and-best-practices/
-    ├── _category_.json
-    ├── design-patterns.md
-    └── clean-code-and-performance.md
-```

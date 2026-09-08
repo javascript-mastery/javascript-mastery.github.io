@@ -1,0 +1,184 @@
+---
+slug: var-let-const-scope-hoisting
+title: "Var, Let, or Const?"
+authors: [ajay-dhangar]
+tags: [javascript, es6, web-development, beginners, clean-code]
+description: "Demystify variable declarations in JavaScript. Learn the critical differences between var, let, and const, block scope vs. function scope, hoisting, and the Temporal Dead Zone."
+image: /img/blogs/var-let-const.svg
+date: 2026-09-08
+---
+
+import JSEditor from "@site/src/components/js-live-code-editor";
+import CodeBlock from "@theme/CodeBlock";
+import firstExample from "!!raw-loader!./_scripts/variable-scoping-and-tdz.js";
+
+Understanding variable declarations is foundational to writing robust, bug-free JavaScript. Before ES6 (ECMAScript 2015), `var` was our only choice. Today, we have `let` and `const` and picking the wrong one can lead to silent errors, scope leaks, and unpredictable behavior.
+
+![Var, Let, or Const](/img/blogs/var-let-const.svg)
+
+In this guide, we will break down **scope**, **hoisting**, re-assignment rules, and the **Temporal Dead Zone (TDZ)** with visual mental models and interactive examples.
+
+<!-- truncate -->
+
+## Quick Comparison Matrix
+
+Before diving into details, here is the cheat sheet comparing `var`, `let`, and `const`:
+
+| Feature | `var` | `let` | `const` |
+| :--- | :--- | :--- | :--- |
+| **Scope** | Function Scope | Block Scope | Block Scope |
+| **Hoisting** | Yes (initialized as `undefined`) | Yes (uninitialized in TDZ) | Yes (uninitialized in TDZ) |
+| **Re-declaration** | Allowed in same scope | Forbidden | Forbidden |
+| **Re-assignment** | Allowed | Allowed | Forbidden |
+| **Initialization** | Optional (`undefined`) | Optional (`undefined`) | **Required** at declaration |
+
+## Scope: Where Do Variables Live?
+
+**Scope** determines where your variables are accessible within your code execution context.
+
+### 1. Function Scope (`var`)
+
+Variables declared with `var` are scoped to the nearest enclosing **function**. They completely ignore block boundaries like `if` statements, `for` loops, or plain `{}` blocks.
+
+```javascript
+function scopeExample() {
+  if (true) {
+    var message = "I am visible outside the if block!";
+  }
+  console.log(message); // "I am visible outside the if block!"
+}
+
+scopeExample();
+
+```
+
+:::caution The Classic `for` Loop Bug
+Because `var` ignores block scope, loop counters bleed into outer functions:
+
+```javascript
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100); // Logs 3, 3, 3!
+}
+
+```
+
+:::
+
+### 2. Block Scope (`let` & `const`)
+
+`let` and `const` respect **Block Scope**. A block is any code enclosed within curly braces `{}`.
+
+```javascript
+function blockExample() {
+  if (true) {
+    let secret = "Hidden in block";
+    const apiKey = "12345-ABC";
+  }
+  // ReferenceError: secret is not defined
+  console.log(secret); 
+}
+
+```
+
+By switching the classic loop counter from `var` to `let`, each loop iteration gets its own fresh lexical binding:
+
+```javascript
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100); // Logs 0, 1, 2!
+}
+
+```
+
+## Hoisting & The Temporal Dead Zone (TDZ)
+
+**Hoisting** is JavaScript's default behavior of moving variable and function declarations to the top of their containing scope during the memory allocation creation phase.
+
+### How `var` Hoists
+
+When `var` is hoisted, it is automatically initialized with `undefined`:
+
+```javascript
+console.log(user); // Output: undefined (No crash!)
+var user = "Alex";
+
+// How JavaScript interprets it:
+// var user;
+// console.log(user);
+// user = "Alex";
+
+```
+
+### How `let` and `const` Hoist (The Temporal Dead Zone)
+
+`let` and `const` are also hoisted, but they remain **uninitialized**. The period between the start of the scope execution and the variable's declaration line is called the **Temporal Dead Zone (TDZ)**.
+
+Attempting to read a variable inside its TDZ triggers a runtime `ReferenceError`.
+
+```javascript
+console.log(score); // ❌ ReferenceError: Cannot access 'score' before initialization
+let score = 99;
+
+```
+
+```text
+Scope Start ──────────────────────────┐
+                                      │ Temporal Dead Zone (TDZ)
+                                      │ Accessing 'score' here throws ReferenceError
+let score = 99; ──────────────────────┴ Declaration & Initialization
+console.log(score); // 99 (Safe access)
+
+```
+
+## Mutability: `const` Does Not Mean Immutable!
+
+A common misconception is that `const` values are immutable (unchangeable). In reality, `const` only creates an **immutable binding** to a memory reference.
+
+### Primitives vs. Objects
+
+* **Primitive values** (`number`, `string`, `boolean`) assigned to `const` cannot be changed.
+* **Objects and Arrays** assigned to `const` *can* have their properties mutated!
+
+```javascript
+const user = { name: "Sarah", role: "Developer" };
+
+// ✅ Valid: Mutating internal properties
+user.role = "Lead Architect";
+user.age = 28;
+
+// ❌ Invalid: Re-assigning the reference itself
+user = { name: "John" }; // TypeError: Assignment to constant variable.
+
+```
+
+:::tip Freezing Objects
+To prevent mutating properties inside an object, use `Object.freeze()`:
+
+```javascript
+const config = Object.freeze({ theme: "dark" });
+config.theme = "light"; // Silently fails (or throws Error in Strict Mode)
+
+```
+
+:::
+
+## Interactive Playground
+
+Test variable scoping and TDZ behaviors directly in your browser:
+
+<JSEditor title="variable-scoping-and-tdz.js" run={true}>
+  {firstExample}
+</JSEditor>
+
+## Best Practice Checklist
+
+Follow this simple rule of thumb for clean, maintainable modern JavaScript:
+
+1. **Default to `const`** for all variable declarations.
+2. **Use `let`** only when you know a variable value will be re-assigned (e.g., loop counters, state flags).
+3. **Avoid `var` entirely** in modern ES6+ codebases to eliminate scope bleeding and unexpected hoisting bugs.
+
+## Summary
+
+* **`var`** is function-scoped, hoisted as `undefined`, and allows re-declarations.
+* **`let`** is block-scoped, hoisted inside the **TDZ**, and allows re-assignment.
+* **`const`** is block-scoped, hoisted inside the **TDZ**, forbids re-assignment, but allows object property mutations.
